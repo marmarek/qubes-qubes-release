@@ -38,31 +38,47 @@
     <default>false</default>
     <uservisible>false</uservisible>
     <packagelist>
-      <packagereq>authconfig</packagereq>
-      <packagereq>btrfs-progs</packagereq>
-      <packagereq>cryptsetup</packagereq>
-      <packagereq>dmraid</packagereq>
-      <packagereq>dosfstools</packagereq>
-      <packagereq>dracut-network</packagereq>
-      <packagereq>e2fsprogs</packagereq>
-      <packagereq>efibootmgr</packagereq>
-      <packagereq>fcoe-utils</packagereq>
-      <packagereq>firewalld</packagereq>
-      <packagereq>gfs2-utils</packagereq>
-      <packagereq>glibc-all-langpacks</packagereq>
-      <packagereq>grub2-pc</packagereq>
-      <packagereq>grub2-efi-x64</packagereq>
-      <packagereq>grub2-tools-efi</packagereq>
-      <packagereq>hfsplus-tools</packagereq>
-      <packagereq>iscsi-initiator-utils</packagereq>
-      <packagereq>lvm2</packagereq>
-      <packagereq>mactel-boot</packagereq>
-      <packagereq>mdadm</packagereq>
-      <packagereq>ntfsprogs</packagereq>
-      <packagereq>reiserfs-utils</packagereq>
-      <packagereq>shim-x64</packagereq>
-      <packagereq>syslinux-extlinux</packagereq>
-      <packagereq>xfsprogs</packagereq>
+      <packagereq type="mandatory">authselect</packagereq>
+      <packagereq type="mandatory">authselect-compat</packagereq>
+      <packagereq type="mandatory">btrfs-progs</packagereq>
+      <packagereq type="mandatory">chrony</packagereq>
+      <packagereq type="mandatory">cryptsetup</packagereq>
+      <packagereq type="mandatory">dmraid</packagereq>
+      <packagereq type="mandatory">dosfstools</packagereq>
+      <packagereq type="mandatory">dracut-network</packagereq>
+      <packagereq type="mandatory">e2fsprogs</packagereq>
+      <packagereq arch="aarch64,armhfp,x86_64" type="mandatory">efibootmgr</packagereq>
+      <packagereq arch="aarch64,armhfp" type="mandatory">extlinux-bootloader</packagereq>
+      <packagereq type="mandatory">gfs2-utils</packagereq>
+      <packagereq type="mandatory">glibc-all-langpacks</packagereq>
+      <packagereq arch="aarch64" type="mandatory">grub2-efi-aa64</packagereq>
+      <packagereq arch="aarch64" type="mandatory">grub2-efi-aa64-cdboot</packagereq>
+      <packagereq arch="armhfp" type="mandatory">grub2-efi-arm</packagereq>
+      <packagereq arch="armhfp" type="mandatory">grub2-efi-arm-cdboot</packagereq>
+      <packagereq arch="x86_64" type="mandatory">grub2-efi-ia32</packagereq>
+      <packagereq arch="x86_64" type="mandatory">grub2-efi-ia32-cdboot</packagereq>
+      <packagereq arch="x86_64" type="mandatory">grub2-efi-x64</packagereq>
+      <packagereq arch="x86_64" type="mandatory">grub2-efi-x64-cdboot</packagereq>
+      <packagereq arch="i386,x86_64" type="mandatory">grub2-pc</packagereq>
+      <packagereq arch="ppc64" type="mandatory">grub2-ppc64</packagereq>
+      <packagereq arch="ppc64le" type="mandatory">grub2-ppc64le</packagereq>
+      <packagereq arch="aarch64,armhfp,i686,ppc64,ppc64le,x86_64" type="mandatory">grub2-tools</packagereq>
+      <packagereq arch="aarch64,armhfp,x86_64" type="mandatory">grub2-tools-efi</packagereq>
+      <packagereq arch="aarch64,armhfp,i686,ppc64,ppc64le,x86_64" type="mandatory">grub2-tools-extra</packagereq>
+      <packagereq type="mandatory">hfsplus-tools</packagereq>
+      <packagereq type="mandatory">lvm2</packagereq>
+      <packagereq arch="x86_64" type="mandatory">mactel-boot</packagereq>
+      <packagereq type="mandatory">mdadm</packagereq>
+      <packagereq type="mandatory">ntfsprogs</packagereq>
+      <packagereq type="mandatory">reiserfs-utils</packagereq>
+      <packagereq arch="s390x" type="mandatory">s390utils</packagereq>
+      <packagereq arch="s390x" type="mandatory">s390utils-base</packagereq>
+      <packagereq arch="aarch64" type="mandatory">shim-aa64</packagereq>
+      <packagereq arch="x86_64" type="mandatory">shim-ia32</packagereq>
+      <packagereq arch="x86_64" type="mandatory">shim-x64</packagereq>
+      <packagereq arch="i386,x86_64" type="mandatory">syslinux-extlinux</packagereq>
+      <packagereq type="mandatory">xfsprogs</packagereq>
+      <packagereq type="mandatory">zram</packagereq>
     </packagelist>
   </group>
   <group>
@@ -130,19 +146,28 @@
     <default>true</default>
     <uservisible>false</uservisible>
     <packagelist>
-      <packagereq type="mandatory">desktop-backgrounds-basic</packagereq>
-      <packagereq type="mandatory">glx-utils</packagereq>
-      <packagereq type="mandatory">gnome-packagekit</packagereq>
-      <packagereq type="mandatory">initial-setup-gui</packagereq>
-      <packagereq type="mandatory">initial-setup</packagereq>
-      <packagereq type="mandatory">mesa-dri-drivers</packagereq>
-      <packagereq type="mandatory">xorg-x11-drivers</packagereq>
-      <packagereq type="mandatory">xorg-x11-drv-libinput</packagereq>
-      <packagereq type="mandatory">xorg-x11-server-Xorg</packagereq>
-      <packagereq type="mandatory">xorg-x11-utils</packagereq>
-      <packagereq type="mandatory">xorg-x11-xauth</packagereq>
-      <packagereq type="mandatory">xorg-x11-xinit</packagereq>
-      <packagereq type="mandatory">xterm</packagereq>
+      <packagereq>glx-utils</packagereq>
+      <packagereq>mesa-dri-drivers</packagereq>
+      <packagereq>mesa-vulkan-drivers</packagereq>
+      <packagereq>plymouth-system-theme</packagereq>
+      <packagereq>xorg-x11-drv-armsoc</packagereq>
+      <packagereq>xorg-x11-drv-ati</packagereq>
+      <packagereq>xorg-x11-drv-evdev</packagereq>
+      <packagereq>xorg-x11-drv-fbdev</packagereq>
+      <packagereq>xorg-x11-drv-intel</packagereq>
+      <packagereq>xorg-x11-drv-libinput</packagereq>
+      <packagereq>xorg-x11-drv-nouveau</packagereq>
+      <packagereq>xorg-x11-drv-omap</packagereq>
+      <packagereq>xorg-x11-drv-openchrome</packagereq>
+      <packagereq>xorg-x11-drv-qxl</packagereq>
+      <packagereq>xorg-x11-drv-vesa</packagereq>
+      <packagereq>xorg-x11-drv-vmware</packagereq>
+      <packagereq>xorg-x11-drv-wacom</packagereq>
+      <packagereq>xorg-x11-server-Xorg</packagereq>
+      <packagereq>xorg-x11-utils</packagereq>
+      <packagereq>xorg-x11-xauth</packagereq>
+      <packagereq>xorg-x11-xinit</packagereq>
+      <packagereq type="optional">xorg-x11-drv-geode</packagereq>
     </packagelist>
   </group>
   <group>
@@ -308,7 +333,6 @@
       <packagereq type="mandatory">basesystem</packagereq>
       <packagereq type="mandatory">bash</packagereq>
       <packagereq type="mandatory">coreutils</packagereq>
-      <packagereq type="mandatory">cronie</packagereq>
       <packagereq type="mandatory">curl</packagereq>
       <packagereq type="mandatory">dnf</packagereq>
       <packagereq type="mandatory">e2fsprogs</packagereq>
@@ -459,27 +483,22 @@
     <packagelist>
       <packagereq type="default">aajohan-comfortaa-fonts</packagereq>
       <packagereq type="default">abattis-cantarell-fonts</packagereq>
-      <packagereq type="default">adobe-source-han-sans-cn-fonts</packagereq>
-      <packagereq type="default">adobe-source-han-sans-tw-fonts</packagereq>
       <packagereq type="default">dejavu-sans-fonts</packagereq>
       <packagereq type="default">dejavu-sans-mono-fonts</packagereq>
       <packagereq type="default">dejavu-serif-fonts</packagereq>
       <packagereq type="default">gnu-free-mono-fonts</packagereq>
       <packagereq type="default">gnu-free-sans-fonts</packagereq>
       <packagereq type="default">gnu-free-serif-fonts</packagereq>
-      <packagereq type="default">google-noto-sans-lisu-fonts</packagereq>
-      <packagereq type="default">google-noto-sans-mandaic-fonts</packagereq>
-      <packagereq type="default">google-noto-sans-meetei-mayek-fonts</packagereq>
-      <packagereq type="default">google-noto-sans-tagalog-fonts</packagereq>
-      <packagereq type="default">google-noto-sans-tai-tham-fonts</packagereq>
-      <packagereq type="default">google-noto-sans-tai-viet-fonts</packagereq>
+      <packagereq type="default">google-noto-emoji-color-fonts</packagereq>
+      <packagereq type="default">google-noto-sans-cjk-ttc-fonts</packagereq>
+      <packagereq type="default">google-noto-sans-sinhala-fonts</packagereq>
+      <packagereq type="default">google-noto-serif-cjk-ttc-fonts</packagereq>
       <packagereq type="default">jomolhari-fonts</packagereq>
       <packagereq type="default">julietaula-montserrat-fonts</packagereq>
       <packagereq type="default">khmeros-base-fonts</packagereq>
       <packagereq type="default">liberation-mono-fonts</packagereq>
       <packagereq type="default">liberation-sans-fonts</packagereq>
       <packagereq type="default">liberation-serif-fonts</packagereq>
-      <packagereq type="default">lklug-fonts</packagereq>
       <packagereq type="default">lohit-assamese-fonts</packagereq>
       <packagereq type="default">lohit-bengali-fonts</packagereq>
       <packagereq type="default">lohit-devanagari-fonts</packagereq>
@@ -489,7 +508,6 @@
       <packagereq type="default">lohit-odia-fonts</packagereq>
       <packagereq type="default">lohit-tamil-fonts</packagereq>
       <packagereq type="default">lohit-telugu-fonts</packagereq>
-      <packagereq type="default">naver-nanum-gothic-fonts</packagereq>
       <packagereq type="default">paktype-naskh-basic-fonts</packagereq>
       <packagereq type="default">paratype-pt-sans-fonts</packagereq>
       <packagereq type="default">sil-abyssinica-fonts</packagereq>
@@ -498,21 +516,43 @@
       <packagereq type="default">sil-padauk-fonts</packagereq>
       <packagereq type="default">smc-meera-fonts</packagereq>
       <packagereq type="default">stix-fonts</packagereq>
-      <packagereq type="default">tabish-eeyek-fonts</packagereq>
       <packagereq type="default">thai-scalable-waree-fonts</packagereq>
-      <packagereq type="default">vlgothic-fonts</packagereq>
       <packagereq type="optional">adf-accanthis-2-fonts</packagereq>
       <packagereq type="optional">adf-accanthis-3-fonts</packagereq>
       <packagereq type="optional">adf-accanthis-fonts</packagereq>
       <packagereq type="optional">adf-gillius-2-fonts</packagereq>
       <packagereq type="optional">adf-gillius-fonts</packagereq>
       <packagereq type="optional">adf-tribun-fonts</packagereq>
+      <packagereq type="optional">adobe-source-code-pro-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-code-jp-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-sans-cn-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-sans-jp-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-sans-kr-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-sans-tw-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-serif-cn-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-serif-jp-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-serif-kr-fonts</packagereq>
+      <packagereq type="optional">adobe-source-han-serif-tw-fonts</packagereq>
+      <packagereq type="optional">adobe-source-sans-pro-fonts</packagereq>
+      <packagereq type="optional">adobe-source-serif-pro-fonts</packagereq>
+      <packagereq type="optional">aftertheflood-sparks-bar-fonts</packagereq>
+      <packagereq type="optional">aftertheflood-sparks-dot-fonts</packagereq>
+      <packagereq type="optional">aftertheflood-sparks-dot-line-fonts</packagereq>
       <packagereq type="optional">aldusleaf-crimson-text-fonts</packagereq>
+      <packagereq type="optional">alef-fonts</packagereq>
       <packagereq type="optional">allgeyer-musiqwik-fonts</packagereq>
       <packagereq type="optional">allgeyer-musisync-fonts</packagereq>
+      <packagereq type="optional">almas-mongolian-title-fonts</packagereq>
+      <packagereq type="optional">amiri-fonts</packagereq>
+      <packagereq type="optional">amiri-quran-fonts</packagereq>
+      <packagereq type="optional">anka-coder-condensed-fonts</packagereq>
+      <packagereq type="optional">anka-coder-narrow-fonts</packagereq>
+      <packagereq type="optional">anka-coder-norm-fonts</packagereq>
       <packagereq type="optional">apa-new-athena-unicode-fonts</packagereq>
       <packagereq type="optional">apanov-edrip-fonts</packagereq>
       <packagereq type="optional">apanov-heuristica-fonts</packagereq>
+      <packagereq type="optional">astigmatic-grand-hotel-fonts</packagereq>
+      <packagereq type="optional">astloch-fonts</packagereq>
       <packagereq type="optional">baekmuk-ttf-batang-fonts</packagereq>
       <packagereq type="optional">baekmuk-ttf-dotum-fonts</packagereq>
       <packagereq type="optional">baekmuk-ttf-gulim-fonts</packagereq>
@@ -525,12 +565,25 @@
       <packagereq type="optional">bitstream-vera-serif-fonts</packagereq>
       <packagereq type="optional">bpg-algeti-fonts</packagereq>
       <packagereq type="optional">bpg-chveulebrivi-fonts</packagereq>
+      <packagereq type="optional">bpg-classic-fonts</packagereq>
       <packagereq type="optional">bpg-courier-fonts</packagereq>
       <packagereq type="optional">bpg-courier-s-fonts</packagereq>
+      <packagereq type="optional">bpg-dedaena-block-fonts</packagereq>
+      <packagereq type="optional">bpg-dejavu-sans-fonts</packagereq>
       <packagereq type="optional">bpg-elite-fonts</packagereq>
+      <packagereq type="optional">bpg-excelsior-caps-fonts</packagereq>
+      <packagereq type="optional">bpg-excelsior-condenced-fonts</packagereq>
       <packagereq type="optional">bpg-excelsior-fonts</packagereq>
       <packagereq type="optional">bpg-glaho-fonts</packagereq>
+      <packagereq type="optional">bpg-gorda-fonts</packagereq>
       <packagereq type="optional">bpg-ingiri-fonts</packagereq>
+      <packagereq type="optional">bpg-irubaqidze-fonts</packagereq>
+      <packagereq type="optional">bpg-mikhail-stephan-fonts</packagereq>
+      <packagereq type="optional">bpg-mrgvlovani-caps-fonts</packagereq>
+      <packagereq type="optional">bpg-mrgvlovani-fonts</packagereq>
+      <packagereq type="optional">bpg-nateli-caps-fonts</packagereq>
+      <packagereq type="optional">bpg-nateli-condenced-fonts</packagereq>
+      <packagereq type="optional">bpg-nateli-fonts</packagereq>
       <packagereq type="optional">bpg-nino-medium-cond-fonts</packagereq>
       <packagereq type="optional">bpg-nino-medium-fonts</packagereq>
       <packagereq type="optional">bpg-sans-fonts</packagereq>
@@ -539,8 +592,11 @@
       <packagereq type="optional">bpg-sans-regular-fonts</packagereq>
       <packagereq type="optional">bpg-serif-fonts</packagereq>
       <packagereq type="optional">bpg-serif-modern-fonts</packagereq>
+      <packagereq type="optional">bpg-ucnobi-fonts</packagereq>
       <packagereq type="optional">campivisivi-titillium-fonts</packagereq>
+      <packagereq type="optional">carterone-fonts</packagereq>
       <packagereq type="optional">cave9-mutante-fonts</packagereq>
+      <packagereq type="optional">cdac-sakal-marathi-fonts</packagereq>
       <packagereq type="optional">cf-bonveno-fonts</packagereq>
       <packagereq type="optional">cf-sorts-mill-goudy-fonts</packagereq>
       <packagereq type="optional">chisholm-letterslaughing-fonts</packagereq>
@@ -555,6 +611,11 @@
       <packagereq type="optional">ctan-kerkis-calligraphic-fonts</packagereq>
       <packagereq type="optional">ctan-kerkis-sans-fonts</packagereq>
       <packagereq type="optional">ctan-kerkis-serif-fonts</packagereq>
+      <packagereq type="optional">culmus-shofar-fonts</packagereq>
+      <packagereq type="optional">cyreal-wireone-fonts</packagereq>
+      <packagereq type="optional">d-din-condensed-fonts</packagereq>
+      <packagereq type="optional">d-din-exp-fonts</packagereq>
+      <packagereq type="optional">d-din-fonts</packagereq>
       <packagereq type="optional">darkgarden-fonts</packagereq>
       <packagereq type="optional">dejavu-lgc-sans-fonts</packagereq>
       <packagereq type="optional">dejavu-lgc-sans-mono-fonts</packagereq>
@@ -570,9 +631,14 @@
       <packagereq type="optional">dustin-dustismo-sans-fonts</packagereq>
       <packagereq type="optional">ecolier-court-fonts</packagereq>
       <packagereq type="optional">ecolier-court-lignes-fonts</packagereq>
-      <packagereq type="optional">extremetuxracer-papercuts-fonts</packagereq>
-      <packagereq type="optional">extremetuxracer-papercuts-outline-fonts</packagereq>
+      <packagereq type="optional">ektype-mukta-devanagari-fonts</packagereq>
+      <packagereq type="optional">ektype-mukta-mahee-fonts</packagereq>
+      <packagereq type="optional">ektype-mukta-malar-fonts</packagereq>
+      <packagereq type="optional">ektype-mukta-vaani-fonts</packagereq>
+      <packagereq type="optional">entypo-fonts</packagereq>
+      <packagereq type="optional">eosrei-emojione-fonts</packagereq>
       <packagereq type="optional">fontawesome-fonts</packagereq>
+      <packagereq type="optional">fontsquirrel-crete-round-fonts</packagereq>
       <packagereq type="optional">freecol-imperator-fonts</packagereq>
       <packagereq type="optional">freecol-shadowedblack-fonts</packagereq>
       <packagereq type="optional">gargi-fonts</packagereq>
@@ -611,22 +677,45 @@
       <packagereq type="optional">gfs-pyrsos-fonts</packagereq>
       <packagereq type="optional">gfs-solomos-fonts</packagereq>
       <packagereq type="optional">gfs-theokritos-fonts</packagereq>
+      <packagereq type="optional">glyphicons-halflings-fonts</packagereq>
       <packagereq type="optional">google-croscore-arimo-fonts</packagereq>
       <packagereq type="optional">google-croscore-cousine-fonts</packagereq>
       <packagereq type="optional">google-croscore-symbolneu-fonts</packagereq>
       <packagereq type="optional">google-croscore-tinos-fonts</packagereq>
+      <packagereq type="optional">google-crosextra-caladea-fonts</packagereq>
+      <packagereq type="optional">google-crosextra-carlito-fonts</packagereq>
       <packagereq type="optional">google-droid-kufi-fonts</packagereq>
       <packagereq type="optional">google-droid-sans-fonts</packagereq>
       <packagereq type="optional">google-droid-sans-mono-fonts</packagereq>
       <packagereq type="optional">google-droid-serif-fonts</packagereq>
+      <!-- <packagereq type="optional">google-noto-cjk-fonts</packagereq> -->
+      <packagereq type="optional">google-noto-emoji-fonts</packagereq>
+      <packagereq type="optional">google-noto-kufi-arabic-fonts</packagereq>
+      <packagereq type="optional">google-noto-mono-fonts</packagereq>
+      <packagereq type="optional">google-noto-naskh-arabic-fonts</packagereq>
+      <packagereq type="optional">google-noto-naskh-arabic-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-nastaliq-urdu-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-armenian-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-avestan-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-balinese-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-bamum-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-batak-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-bengali-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-bengali-ui-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-brahmi-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-buginese-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-buhid-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-canadian-aboriginal-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-carian-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-cham-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-cherokee-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-cjk-jp-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-cjk-kr-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-cjk-sc-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-cjk-tc-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-coptic-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-cuneiform-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-cypriot-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-deseret-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-devanagari-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-devanagari-ui-fonts</packagereq>
@@ -635,10 +724,18 @@
       <packagereq type="optional">google-noto-sans-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-georgian-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-glagolitic-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-gothic-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-gujarati-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-gujarati-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-gurmukhi-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-gurmukhi-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-hanunoo-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-hebrew-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-imperial-aramaic-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-inscriptional-pahlavi-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-inscriptional-parthian-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-javanese-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-jp-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-kaithi-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-kannada-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-kannada-ui-fonts</packagereq>
@@ -646,45 +743,111 @@
       <packagereq type="optional">google-noto-sans-kharoshthi-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-khmer-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-khmer-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-kr-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-lao-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-lao-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-lepcha-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-limbu-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-linear-b-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-lisu-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-lycian-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-lydian-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-malayalam-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-malayalam-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-mandaic-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-meetei-mayek-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-mongolian-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-mono-cjk-jp-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-mono-cjk-kr-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-mono-cjk-sc-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-mono-cjk-tc-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-myanmar-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-myanmar-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-new-tai-lue-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-nko-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-ogham-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-ol-chiki-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-old-italic-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-old-persian-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-old-south-arabian-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-old-turkic-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-oriya-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-oriya-ui-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-osmanya-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-phags-pa-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-phoenician-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-rejang-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-runic-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-samaritan-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-saurashtra-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-sc-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-shavian-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-sundanese-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-syloti-nagri-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-symbols-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-syriac-eastern-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-syriac-estrangela-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-syriac-western-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tagalog-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tagbanwa-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tai-le-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tai-tham-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tai-viet-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-tamil-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-tamil-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tc-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-telugu-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-telugu-ui-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-thaana-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-thai-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-thai-ui-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tibetan-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-tifinagh-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-ugaritic-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-ui-fonts</packagereq>
       <packagereq type="optional">google-noto-sans-vai-fonts</packagereq>
+      <packagereq type="optional">google-noto-sans-yi-fonts</packagereq>
       <packagereq type="optional">google-noto-serif-armenian-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-bengali-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-cjk-jp-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-cjk-kr-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-cjk-sc-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-cjk-tc-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-devanagari-fonts</packagereq>
       <packagereq type="optional">google-noto-serif-fonts</packagereq>
       <packagereq type="optional">google-noto-serif-georgian-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-gujarati-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-jp-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-kannada-fonts</packagereq>
       <packagereq type="optional">google-noto-serif-khmer-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-kr-fonts</packagereq>
       <packagereq type="optional">google-noto-serif-lao-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-malayalam-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-sc-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-tamil-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-tc-fonts</packagereq>
+      <packagereq type="optional">google-noto-serif-telugu-fonts</packagereq>
       <packagereq type="optional">google-noto-serif-thai-fonts</packagereq>
+      <packagereq type="optional">google-roboto-condensed-fonts</packagereq>
+      <packagereq type="optional">google-roboto-fonts</packagereq>
+      <packagereq type="optional">google-roboto-mono-fonts</packagereq>
+      <packagereq type="optional">google-roboto-slab-fonts</packagereq>
+      <packagereq type="optional">grimmer-proggy-squaresz-fonts</packagereq>
       <packagereq type="optional">grimmer-proggy-tinysz-fonts</packagereq>
       <packagereq type="optional">gubbi-fonts</packagereq>
+      <packagereq type="optional">gust-antykwa-torunska-fonts</packagereq>
       <packagereq type="optional">hanazono-fonts</packagereq>
       <packagereq type="optional">hiran-perizia-fonts</packagereq>
       <packagereq type="optional">horai-ume-gothic-fonts</packagereq>
+      <packagereq type="optional">horai-ume-hgothic-fonts</packagereq>
       <packagereq type="optional">horai-ume-mincho-fonts</packagereq>
       <packagereq type="optional">horai-ume-pgothic-fonts</packagereq>
       <packagereq type="optional">horai-ume-pmincho-fonts</packagereq>
       <packagereq type="optional">horai-ume-uigothic-fonts</packagereq>
+      <packagereq type="optional">ht-alegreya-fonts</packagereq>
+      <packagereq type="optional">ht-alegreya-smallcaps-fonts</packagereq>
       <packagereq type="optional">impallari-lobster-fonts</packagereq>
+      <packagereq type="optional">impallari-raleway-fonts</packagereq>
       <packagereq type="optional">inkboy-fonts</packagereq>
       <packagereq type="optional">ipa-ex-gothic-fonts</packagereq>
       <packagereq type="optional">ipa-ex-mincho-fonts</packagereq>
@@ -717,15 +880,28 @@
       <packagereq type="optional">khmeros-metal-chrieng-fonts</packagereq>
       <packagereq type="optional">khmeros-muol-fonts</packagereq>
       <packagereq type="optional">khmeros-siemreap-fonts</packagereq>
+      <packagereq type="optional">kranky-fonts</packagereq>
       <packagereq type="optional">kurdit-unikurd-web-fonts</packagereq>
+      <packagereq type="optional">labelleaurore-fonts</packagereq>
+      <packagereq type="optional">labiryntowy-fonts</packagereq>
       <packagereq type="optional">lato-fonts</packagereq>
+      <packagereq type="optional">layla-arcyarc-fonts</packagereq>
+      <packagereq type="optional">layla-basic-arabic-fonts</packagereq>
+      <packagereq type="optional">layla-boxer-fonts</packagereq>
+      <packagereq type="optional">layla-digital-fonts</packagereq>
+      <packagereq type="optional">layla-diwani-fonts</packagereq>
+      <packagereq type="optional">layla-koufi-fonts</packagereq>
+      <packagereq type="optional">layla-ruqaa-fonts</packagereq>
+      <packagereq type="optional">layla-thuluth-fonts</packagereq>
       <packagereq type="optional">levien-inconsolata-fonts</packagereq>
       <packagereq type="optional">levien-museum-fonts</packagereq>
+      <!-- <packagereq type="optional">liberation-fonts</packagereq> -->
       <packagereq type="optional">liberation-narrow-fonts</packagereq>
       <packagereq type="optional">libreoffice-opensymbol-fonts</packagereq>
       <packagereq type="optional">lilypond-emmentaler-fonts</packagereq>
       <packagereq type="optional">linux-libertine-biolinum-fonts</packagereq>
       <packagereq type="optional">linux-libertine-fonts</packagereq>
+      <packagereq type="optional">lklug-fonts</packagereq>
       <packagereq type="optional">lohit-malayalam-fonts</packagereq>
       <packagereq type="optional">lohit-marathi-fonts</packagereq>
       <packagereq type="optional">lohit-nepali-fonts</packagereq>
@@ -736,11 +912,15 @@
       <packagereq type="optional">mgopen-cosmetica-fonts</packagereq>
       <packagereq type="optional">mgopen-modata-fonts</packagereq>
       <packagereq type="optional">mgopen-moderna-fonts</packagereq>
+      <packagereq type="optional">mnmlicons-fonts</packagereq>
       <packagereq type="optional">mona-sazanami-fonts</packagereq>
       <packagereq type="optional">mona-vlgothic-fonts</packagereq>
+      <packagereq type="optional">monofett-fonts</packagereq>
       <packagereq type="optional">motoya-lcedar-fonts</packagereq>
       <packagereq type="optional">motoya-lmaru-fonts</packagereq>
       <packagereq type="optional">moyogo-molengo-fonts</packagereq>
+      <packagereq type="optional">mozilla-fira-mono-fonts</packagereq>
+      <packagereq type="optional">mozilla-fira-sans-fonts</packagereq>
       <packagereq type="optional">mph-2b-damase-fonts</packagereq>
       <packagereq type="optional">mplus-1c-fonts</packagereq>
       <packagereq type="optional">mplus-1m-fonts</packagereq>
@@ -759,11 +939,13 @@
       <packagereq type="optional">nafees-tehreer-naskh-fonts</packagereq>
       <packagereq type="optional">nafees-web-naskh-fonts</packagereq>
       <packagereq type="optional">naver-nanum-barun-gothic-fonts</packagereq>
+      <packagereq type="optional">naver-nanum-barun-pen-fonts</packagereq>
       <packagereq type="optional">naver-nanum-brush-fonts</packagereq>
+      <packagereq type="optional">naver-nanum-gothic-coding-fonts</packagereq>
+      <packagereq type="optional">naver-nanum-gothic-fonts</packagereq>
       <packagereq type="optional">naver-nanum-myeongjo-fonts</packagereq>
       <packagereq type="optional">naver-nanum-pen-fonts</packagereq>
       <packagereq type="optional">navilu-fonts</packagereq>
-      <packagereq type="optional">nhn-nanum-gothic-coding-fonts</packagereq>
       <packagereq type="optional">ns-bola-fonts</packagereq>
       <packagereq type="optional">ns-tiza-chalk-fonts</packagereq>
       <packagereq type="optional">oflb-asana-math-fonts</packagereq>
@@ -772,13 +954,16 @@
       <packagereq type="optional">oflb-icelandic-fonts</packagereq>
       <packagereq type="optional">oflb-notcouriersans-fonts</packagereq>
       <packagereq type="optional">oflb-prociono-fonts</packagereq>
-      <packagereq type="optional">oflb-riordonfancy-fonts</packagereq>
       <packagereq type="optional">oflb-roadstencil-fonts</packagereq>
       <packagereq type="optional">oflb-smonohand-fonts</packagereq>
       <packagereq type="optional">oflb-sportrop-fonts</packagereq>
       <packagereq type="optional">oldstandard-sfd-fonts</packagereq>
       <packagereq type="optional">open-sans-fonts</packagereq>
+      <packagereq type="optional">opendyslexic-fonts</packagereq>
       <packagereq type="optional">overpass-fonts</packagereq>
+      <!-- <packagereq type="optional">oxygen-fonts</packagereq> -->
+      <packagereq type="optional">oxygen-mono-fonts</packagereq>
+      <packagereq type="optional">oxygen-sans-fonts</packagereq>
       <packagereq type="optional">pagul-fonts</packagereq>
       <packagereq type="optional">paktype-ajrak-fonts</packagereq>
       <packagereq type="optional">paktype-naqsh-fonts</packagereq>
@@ -787,7 +972,12 @@
       <packagereq type="optional">paratype-pt-sans-caption-fonts</packagereq>
       <packagereq type="optional">paratype-pt-serif-caption-fonts</packagereq>
       <packagereq type="optional">paratype-pt-serif-fonts</packagereq>
+      <packagereq type="optional">pcaro-hermit-fonts</packagereq>
+      <packagereq type="optional">phetsarath-fonts</packagereq>
+      <packagereq type="optional">polarsys-b612-mono-fonts</packagereq>
+      <packagereq type="optional">polarsys-b612-sans-fonts</packagereq>
       <packagereq type="optional">pothana2000-fonts</packagereq>
+      <packagereq type="optional">reeniebeanie-fonts</packagereq>
       <packagereq type="optional">saab-fonts</packagereq>
       <packagereq type="optional">samyak-devanagari-fonts</packagereq>
       <packagereq type="optional">samyak-gujarati-fonts</packagereq>
@@ -797,7 +987,6 @@
       <packagereq type="optional">sarai-fonts</packagereq>
       <packagereq type="optional">sazanami-gothic-fonts</packagereq>
       <packagereq type="optional">sazanami-mincho-fonts</packagereq>
-      <packagereq type="optional">scholarsfonts-cardo-fonts</packagereq>
       <packagereq type="optional">senamirmir-washra-fantuwua-fonts</packagereq>
       <packagereq type="optional">senamirmir-washra-fonts</packagereq>
       <packagereq type="optional">senamirmir-washra-hiwua-fonts</packagereq>
@@ -809,6 +998,7 @@
       <packagereq type="optional">senamirmir-washra-yigezu-bisrat-gothic-fonts</packagereq>
       <packagereq type="optional">senamirmir-washra-zelan-fonts</packagereq>
       <packagereq type="optional">serafettin-cartoon-fonts</packagereq>
+      <packagereq type="optional">shadowsintolight-fonts</packagereq>
       <packagereq type="optional">sil-andika-fonts</packagereq>
       <packagereq type="optional">sil-charis-compact-fonts</packagereq>
       <packagereq type="optional">sil-charis-fonts</packagereq>
@@ -829,13 +1019,16 @@
       <packagereq type="optional">smc-rachana-fonts</packagereq>
       <packagereq type="optional">smc-raghumalayalam-fonts</packagereq>
       <packagereq type="optional">smc-suruma-fonts</packagereq>
+      <packagereq type="optional">specialelite-fonts</packagereq>
       <packagereq type="optional">stix-math-fonts</packagereq>
+      <packagereq type="optional">tabish-eeyek-fonts</packagereq>
       <packagereq type="optional">tangerine-fonts</packagereq>
       <packagereq type="optional">thai-arundina-sans-fonts</packagereq>
       <packagereq type="optional">thai-arundina-sans-mono-fonts</packagereq>
       <packagereq type="optional">thai-arundina-serif-fonts</packagereq>
       <packagereq type="optional">thai-scalable-garuda-fonts</packagereq>
       <packagereq type="optional">thai-scalable-kinnari-fonts</packagereq>
+      <packagereq type="optional">thai-scalable-laksaman-fonts</packagereq>
       <packagereq type="optional">thai-scalable-loma-fonts</packagereq>
       <packagereq type="optional">thai-scalable-norasi-fonts</packagereq>
       <packagereq type="optional">thai-scalable-purisa-fonts</packagereq>
@@ -845,6 +1038,7 @@
       <packagereq type="optional">thai-scalable-tlwgtypist-fonts</packagereq>
       <packagereq type="optional">thai-scalable-tlwgtypo-fonts</packagereq>
       <packagereq type="optional">thai-scalable-umpush-fonts</packagereq>
+      <packagereq type="optional">tharlon-fonts</packagereq>
       <packagereq type="optional">thibault-essays1743-fonts</packagereq>
       <packagereq type="optional">thibault-isabella-fonts</packagereq>
       <packagereq type="optional">thibault-rockets-fonts</packagereq>
@@ -863,8 +1057,11 @@
       <packagereq type="optional">tlomt-orbitron-fonts</packagereq>
       <packagereq type="optional">tlomt-sniglet-fonts</packagereq>
       <packagereq type="optional">trabajo-fonts</packagereq>
+      <packagereq type="optional">tuladha-jejeg-fonts</packagereq>
       <packagereq type="optional">tulrich-tuffy-fonts</packagereq>
+      <packagereq type="optional">twitter-twemoji-fonts</packagereq>
       <packagereq type="optional">typemade-josefinsansstd-light-fonts</packagereq>
+      <packagereq type="optional">typetype-molot-fonts</packagereq>
       <packagereq type="optional">ubuntu-title-fonts</packagereq>
       <packagereq type="optional">ukij-tuz-fonts</packagereq>
       <packagereq type="optional">un-core-batang-fonts</packagereq>
@@ -885,10 +1082,25 @@
       <packagereq type="optional">un-extra-taza-fonts</packagereq>
       <packagereq type="optional">un-extra-vada-fonts</packagereq>
       <packagereq type="optional">un-extra-yetgul-fonts</packagereq>
+      <packagereq type="optional">unifrakturmaguntia-fonts</packagereq>
+      <packagereq type="optional">urw-base35-bookman-fonts</packagereq>
+      <packagereq type="optional">urw-base35-c059-fonts</packagereq>
+      <packagereq type="optional">urw-base35-d050000l-fonts</packagereq>
+      <packagereq type="optional">urw-base35-fonts</packagereq>
+      <packagereq type="optional">urw-base35-gothic-fonts</packagereq>
+      <packagereq type="optional">urw-base35-nimbus-mono-ps-fonts</packagereq>
+      <packagereq type="optional">urw-base35-nimbus-roman-fonts</packagereq>
+      <packagereq type="optional">urw-base35-nimbus-sans-fonts</packagereq>
+      <packagereq type="optional">urw-base35-p052-fonts</packagereq>
+      <packagereq type="optional">urw-base35-standard-symbols-ps-fonts</packagereq>
+      <packagereq type="optional">urw-base35-z003-fonts</packagereq>
       <packagereq type="optional">vdrsymbol-fonts</packagereq>
       <packagereq type="optional">vemana2000-fonts</packagereq>
+      <packagereq type="optional">vlgothic-fonts</packagereq>
       <packagereq type="optional">vlgothic-p-fonts</packagereq>
       <packagereq type="optional">vollkorn-fonts</packagereq>
+      <packagereq type="optional">vt323-fonts</packagereq>
+      <packagereq type="optional">wallpoet-fonts</packagereq>
       <packagereq type="optional">wine-marlett-fonts</packagereq>
       <packagereq type="optional">wine-symbol-fonts</packagereq>
       <packagereq type="optional">woodardworks-laconic-fonts</packagereq>
@@ -1029,21 +1241,18 @@
     <default>false</default>
     <uservisible>false</uservisible>
     <packagelist>
-      <packagereq type="default">usb_modeswitch</packagereq>
       <packagereq type="optional">acpi</packagereq>
       <packagereq type="optional">acpitool</packagereq>
       <packagereq type="optional">alsa-firmware</packagereq>
       <packagereq type="optional">cmospwd</packagereq>
-      <packagereq type="optional">firmware-addon-dell</packagereq>
       <packagereq type="optional">hddtemp</packagereq>
       <packagereq type="optional">hdparm</packagereq>
-      <packagereq type="optional">i8kutils</packagereq>
       <packagereq type="optional">libifp</packagereq>
+      <packagereq type="optional">liquidio-firmware</packagereq>
       <packagereq type="optional">lsscsi</packagereq>
-      <packagereq type="optional">openct</packagereq>
       <packagereq type="optional">opensc</packagereq>
-      <packagereq type="optional">pcsc-lite-ccid</packagereq>
       <packagereq type="optional">pcsc-lite</packagereq>
+      <packagereq type="optional">pcsc-lite-ccid</packagereq>
       <packagereq type="optional">radeontop</packagereq>
     </packagelist>
   </group>
@@ -1104,51 +1313,59 @@
     <default>true</default>
     <uservisible>false</uservisible>
     <packagelist>
-      <packagereq type="mandatory">adwaita-gtk2-theme</packagereq>
-      <packagereq type="mandatory">breeze-icon-theme</packagereq>
-      <packagereq type="mandatory">colord-kde</packagereq>
-      <packagereq type="mandatory">dolphin</packagereq>
-      <packagereq type="mandatory">kcm-gtk</packagereq>
-      <packagereq type="mandatory">kcm_systemd</packagereq>
-      <packagereq type="mandatory">kde-runtime</packagereq>
-      <packagereq type="mandatory">kde-settings-pulseaudio</packagereq>
-      <packagereq type="mandatory">kde-style-breeze</packagereq>
-      <packagereq type="mandatory">kdelibs</packagereq>
-      <packagereq type="mandatory">kdepasswd</packagereq>
-      <packagereq type="mandatory">kdeplasma-addons</packagereq>
-      <packagereq type="mandatory">kdialog</packagereq>
-      <packagereq type="mandatory">khelpcenter</packagereq>
-      <packagereq type="mandatory">khotkeys</packagereq>
-      <packagereq type="mandatory">kinfocenter</packagereq>
-      <packagereq type="mandatory">kmenuedit</packagereq>
-      <packagereq type="mandatory">konsole5</packagereq>
-      <packagereq type="mandatory">kscreen</packagereq>
-      <packagereq type="mandatory">ksnapshot</packagereq>
-      <packagereq type="mandatory">ksysguard</packagereq>
-      <packagereq type="mandatory">kwin</packagereq>
-      <packagereq type="mandatory">mesa-libEGL</packagereq>
-      <packagereq type="mandatory">phonon-backend-gstreamer</packagereq>
-      <packagereq type="mandatory">phonon-qt5-backend-gstreamer</packagereq>
-      <packagereq type="mandatory">plasma-breeze</packagereq>
-      <packagereq type="mandatory">plasma-desktop-doc</packagereq>
+      <packagereq>adwaita-gtk2-theme</packagereq>
+      <packagereq>breeze-icon-theme</packagereq>
+      <packagereq>colord-kde</packagereq>
+      <packagereq>dnfdragora</packagereq>
+      <packagereq>glibc-all-langpacks</packagereq>
+      <packagereq>initial-setup-gui</packagereq>
+      <packagereq>kcalc</packagereq>
+      <packagereq>kcharselect</packagereq>
+      <packagereq>kcm_systemd</packagereq>
+      <packagereq>kcolorchooser</packagereq>
+      <packagereq>kde-gtk-config</packagereq>
+      <packagereq>kde-partitionmanager</packagereq>
+      <packagereq>kde-settings-pulseaudio</packagereq>
+      <packagereq>kdeplasma-addons</packagereq>
+      <packagereq>kdialog</packagereq>
+      <packagereq>kgpg</packagereq>
+      <packagereq>khelpcenter</packagereq>
+      <packagereq>khotkeys</packagereq>
+      <packagereq>kinfocenter</packagereq>
+      <packagereq>kmag</packagereq>
+      <packagereq>kmenuedit</packagereq>
+      <packagereq>kmousetool</packagereq>
+      <packagereq>kmouth</packagereq>
+      <packagereq>konsole5</packagereq>
+      <packagereq>kruler</packagereq>
+      <packagereq>kscreen</packagereq>
+      <packagereq>kscreenlocker</packagereq>
+      <packagereq>ksshaskpass</packagereq>
+      <packagereq>ksysguard</packagereq>
+      <packagereq>kwalletmanager5</packagereq>
+      <packagereq>kwin</packagereq>
+      <packagereq>kwrite</packagereq>
+      <packagereq>pam-kwallet</packagereq>
+      <packagereq>pinentry-qt</packagereq>
+      <packagereq>plasma-breeze</packagereq>
+      <packagereq>plasma-desktop-doc</packagereq>
+      <packagereq>plasma-discover</packagereq>
+      <packagereq>plasma-drkonqi</packagereq>
+      <packagereq>plasma-pa</packagereq>
+      <packagereq>plasma-pk-updates</packagereq>
+      <packagereq>plasma-user-manager</packagereq>
+      <packagereq>polkit-kde</packagereq>
+      <packagereq>qt5-qtdeclarative</packagereq>
+      <packagereq>spectacle</packagereq>
+      <packagereq>xorg-x11-drv-libinput</packagereq>
       <packagereq type="mandatory">plasma-desktop</packagereq>
-      <packagereq type="mandatory">plasma-pa</packagereq>
-      <packagereq type="mandatory">plasma-user-manager</packagereq>
-      <packagereq type="mandatory">plasma-workspace-drkonqi</packagereq>
       <packagereq type="mandatory">plasma-workspace</packagereq>
-      <packagereq type="mandatory">polkit-kde</packagereq>
-      <packagereq type="mandatory">qt5-qdbusviewer</packagereq>
-      <packagereq type="mandatory">qt5-qtbase-gui</packagereq>
-      <packagereq type="mandatory">qt5-qtdeclarative</packagereq>
       <packagereq type="mandatory">qubes-kde-dom0</packagereq>
+      <packagereq type="mandatory">qt5-qtbase-gui</packagereq>
+      <packagereq type="mandatory">sddm</packagereq>
       <packagereq type="mandatory">sddm-breeze</packagereq>
       <packagereq type="mandatory">sddm-kcm</packagereq>
-      <packagereq type="mandatory">sddm</packagereq>
-      <packagereq type="mandatory">sni-qt</packagereq>
-      <packagereq type="mandatory">xorg-x11-drv-libinput</packagereq>
-      <packagereq type="mandatory">xsettings-kde</packagereq>
-      <packagereq type="default">apper</packagereq>
-      <packagereq type="default">kmix</packagereq>
+      <packagereq type="conditional" requires="at-spi2-core">qt-at-spi</packagereq>
     </packagelist>
   </group>
   <group>
@@ -1288,6 +1505,7 @@
       <packagereq>bluebird-gtk2-theme</packagereq>
       <packagereq>bluebird-gtk3-theme</packagereq>
       <packagereq>bluebird-xfwm4-theme</packagereq>
+      <packagereq>dnfdragora-updater</packagereq>
       <packagereq>greybird-gtk2-theme</packagereq>
       <packagereq>greybird-gtk3-theme</packagereq>
       <packagereq>greybird-xfce4-notifyd-theme</packagereq>
@@ -1295,7 +1513,6 @@
       <packagereq>gtk-xfce-engine</packagereq>
       <packagereq>gvfs</packagereq>
       <packagereq>initial-setup-gui</packagereq>
-      <packagereq>lightdm-gtk</packagereq>
       <packagereq>openssh-askpass</packagereq>
       <packagereq>xdg-user-dirs-gtk</packagereq>
       <packagereq>xfce4-about</packagereq>
@@ -1304,22 +1521,25 @@
       <packagereq>xfce4-fsguard-plugin</packagereq>
       <packagereq>xfce4-panel</packagereq>
       <packagereq>xfce4-places-plugin</packagereq>
-      <packagereq>xfce4-power-manager</packagereq>
+      <packagereq>xfce4-pulseaudio-plugin</packagereq>
       <packagereq>xfce4-screenshooter-plugin</packagereq>
-      <packagereq>xfce4-session-engines</packagereq>
-      <packagereq>xfce4-session</packagereq>
+      <packagereq>xfce4-taskmanager</packagereq>
       <packagereq>xfce4-settings-qubes</packagereq>
-      <packagereq>xfce4-settings</packagereq>
       <packagereq>xfce4-terminal</packagereq>
       <packagereq>xfce4-whiskermenu-plugin</packagereq>
-      <packagereq>xfconf</packagereq>
-      <packagereq>xfdesktop</packagereq>
       <packagereq>xfwm4-theme-nodoka</packagereq>
       <packagereq>xfwm4-themes</packagereq>
-      <packagereq>xfwm4</packagereq>
       <packagereq>xscreensaver-base</packagereq>
-      <packagereq>dnfdragora</packagereq>
-      <packagereq>zenity</packagereq>
+      <packagereq type="mandatory">lightdm-gtk</packagereq>
+      <packagereq type="mandatory">xfce4-about</packagereq>
+      <packagereq type="mandatory">xfce4-panel</packagereq>
+      <packagereq type="mandatory">xfce4-power-manager</packagereq>
+      <packagereq type="mandatory">xfce4-session</packagereq>
+      <packagereq type="mandatory">xfce4-session-engines</packagereq>
+      <packagereq type="mandatory">xfce4-settings</packagereq>
+      <packagereq type="mandatory">xfconf</packagereq>
+      <packagereq type="mandatory">xfdesktop</packagereq>
+      <packagereq type="mandatory">xfwm4</packagereq>
     </packagelist>
   </group>
   <group>
@@ -1344,7 +1564,6 @@
     <uservisible>false</uservisible>
     <packagelist>
       <packagereq>xfce4-battery-plugin</packagereq>
-      <packagereq>xfce4-cellmodem-plugin</packagereq>
       <packagereq>xfce4-cpugraph-plugin</packagereq>
       <packagereq>xfce4-diskperf-plugin</packagereq>
       <packagereq>xfce4-eyes-plugin</packagereq>
@@ -1354,11 +1573,14 @@
       <packagereq>xfce4-mount-plugin</packagereq>
       <packagereq>xfce4-sensors-plugin</packagereq>
       <packagereq>xfce4-systemload-plugin</packagereq>
-      <packagereq>xfce4-taskmanager</packagereq>
       <packagereq>xfce4-time-out-plugin</packagereq>
       <packagereq>xfce4-timer-plugin</packagereq>
       <packagereq>xfce4-verve-plugin</packagereq>
+      <packagereq>xfce4-whiskermenu-plugin</packagereq>
       <packagereq>xfce4-xkb-plugin</packagereq>
+      <packagereq>xfdashboard</packagereq>
+      <packagereq>xfdashboard-themes</packagereq>
+      <packagereq>xfpanel-switch</packagereq>
     </packagelist>
   </group>
   <group>
