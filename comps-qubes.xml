@@ -149,7 +149,6 @@
       <packagereq>glx-utils</packagereq>
       <packagereq>mesa-dri-drivers</packagereq>
       <packagereq>mesa-vulkan-drivers</packagereq>
-      <packagereq>plymouth-system-theme</packagereq>
       <packagereq>xorg-x11-drv-armsoc</packagereq>
       <packagereq>xorg-x11-drv-ati</packagereq>
       <packagereq>xorg-x11-drv-evdev</packagereq>
