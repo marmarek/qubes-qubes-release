@@ -167,6 +167,7 @@
       <packagereq>xorg-x11-utils</packagereq>
       <packagereq>xorg-x11-xauth</packagereq>
       <packagereq>xorg-x11-xinit</packagereq>
+      <packagereq type="mandatory">xterm</packagereq>
       <packagereq type="optional">xorg-x11-drv-geode</packagereq>
     </packagelist>
   </group>
